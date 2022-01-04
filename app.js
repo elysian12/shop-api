@@ -9,6 +9,7 @@ const connectDB = require('./db/connect')
 
 //routers
 const authRouter = require('./routes/auth')
+const userRouter = require('./routes/user')
 
 //
 app.use(express.json())
@@ -16,6 +17,7 @@ app.use(express.json())
 
 //middleware
 app.use('/api/v1/auth',authRouter)
+app.use('/api/v1/user',userRouter)
 
 
 
