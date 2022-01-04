@@ -33,8 +33,7 @@ const login = async(req,res)=>{
         if(!user){
             res.status(404).json({msg:"user not found"})
         }
-
-        const isMatched = bcrypt.compare(req.body.password,user.password)
+        const isMatched = await bcrypt.compare(req.body.password,user.password)
         if(!isMatched){
             res.status(403).json({msg:"Wrong Credentials"})
         }
